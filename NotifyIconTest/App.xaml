@@ -1,0 +1,15 @@
+﻿<Application x:Class="NotifyIconTest.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:NotifyIconTest"
+             xmlns:tb="http://www.hardcodet.net/taskbar">
+    <Application.Resources>
+        <local:ToVisibilityConverter x:Key="ToVisibilityConverter"></local:ToVisibilityConverter>
+        <tb:TaskbarIcon x:Key="TrayIcon" 
+                        IconSource="/Assets/Dell.ico" 
+                        Visibility="{Binding InTray, Converter={StaticResource ToVisibilityConverter}}" 
+                        LeftClickCommand="{Binding ShowApplication}" 
+                        MenuActivation="RightClick">
+         </tb:TaskbarIcon>
+    </Application.Resources>
+</Application>
