@@ -6,7 +6,7 @@
     <Application.Resources>
         <local:ToVisibilityConverter x:Key="ToVisibilityConverter"></local:ToVisibilityConverter>
         <tb:TaskbarIcon x:Key="TrayIcon" 
-                        IconSource="/Assets/Dell.ico" 
+                        IconSource="/Assets/motherboard.ico" 
                         Visibility="{Binding InTray, Converter={StaticResource ToVisibilityConverter}}" 
                         LeftClickCommand="{Binding ShowApplication}" 
                         MenuActivation="RightClick">

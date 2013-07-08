@@ -34,8 +34,7 @@ namespace NotifyIconTest
 
     public static class ToastManagerFactory
     {
-        //private const string AppId = "Dell.Pangaea.Client.Desktop.AppId";
-        public const string AppId = "Microsoft.Samples.DesktopToastsSample"; 
+        public const string AppId = "Skrymsli.Samples.DesktopToastsSample"; 
 
         private static IToastManager _manager; 
         public static IToastManager ToastManager
@@ -44,16 +43,16 @@ namespace NotifyIconTest
             {
                 if (_manager == null)
                 {
-                    //if (IsWindows8OrHigher())
-                    //{
-                    //    _manager = new Windows8ToastManager(AppId);
-                    //}
-                    //else
-                    //{
+                    if (IsWindows8OrHigher())
+                    {
+                        _manager = new Windows8ToastManager(AppId);
+                    }
+                    else
+                    {
                         // TODO: Dependency injection to get this...
                         var taskbar = (TaskbarIcon)(App.Current).FindResource("TrayIcon");
                         _manager = new TaskbarToastManager(taskbar);
-                    //}
+                    }
                 }
                 return _manager;
             }

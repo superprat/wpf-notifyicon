@@ -161,9 +161,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Assets\dell.ico" />
-  </ItemGroup>
-  <ItemGroup>
+    <Resource Include="Assets\motherboard.ico" />
     <Content Include="toastImageAndText.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
